@@ -1,0 +1,9 @@
+{
+  "name": "Alemayehu Bitew Portfolio",
+  "short_name": "Alemayehu",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#171717",
+  "theme_color": "#171717",
+  "description": "Full-Stack Developer and Digital Marketer portfolio."
+}
