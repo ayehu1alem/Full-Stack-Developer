@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(const AlemayehuPortfolioApp());
 
@@ -482,9 +483,9 @@ class _ProjectCard extends StatelessWidget {
 }
 
 Future<void> _openExternal(String url) async {
-  // Avoid adding a package dependency to this first scaffold. Launching links is
-  // handled with a browser window via an HTML anchor in a later polish pass.
-  // This callback is intentionally a no-op until a validated URL launcher is added.
+  final uri = Uri.tryParse(url);
+  if (uri == null || (uri.scheme != 'https' && uri.scheme != 'http')) return;
+  await launchUrl(uri, mode: LaunchMode.externalApplication);
 }
 
 class _ContactSection extends StatelessWidget {
